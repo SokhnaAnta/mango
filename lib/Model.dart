@@ -3,7 +3,7 @@ import 'package:tflite/tflite.dart';
 loadModel() async {
   await Tflite.loadModel(
     model:
-        "assets/Leafmodel/model_unquant.tflite", //"assets/Leafmodel/anthracnose_model.tflite"
+        "assets/Leafmodel/anthracnose_model.tflite_.tflite", // "assets/Leafmodel/model_unquant.tflite"
     labels: "assets/Leafmodel/labels.txt",
     numThreads: 1,
   );
@@ -18,8 +18,4 @@ classifyImage(String path) async {
       threshold: 0.2,
       asynch: true);
   return output;
-}
-
-void dispose() {
-  Tflite.close();
 }

@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-//import 'package:tflite/tflite.dart';
+import 'package:tflite/tflite.dart';
 import 'Model.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,6 +25,11 @@ class _HomeScreenState extends State<HomeScreen> {
         _loading = false;
       });
     });
+  }
+
+  void dispose() {
+    Tflite.close();
+    super.dispose();
   }
 
   @override
@@ -104,7 +109,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.pop(context);
                               setState(() {
                                 _loading = false;
-                                // Tflite.close();
                                 showDialog(
                                   context: context,
                                   builder: (BuildContext context) {
@@ -162,7 +166,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.pop(context);
                               setState(() async {
                                 _loading = false;
-                                //Tflite.close();
                                 showDialog(
                                   context: context,
                                   builder: (BuildContext context) {
