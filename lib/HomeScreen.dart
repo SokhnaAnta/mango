@@ -104,6 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () async {
                             selectedImagePath = await selectImageFromGallery();
                             _outputs = await classifyImage(selectedImagePath);
+                            print(_outputs);
                             if (selectedImagePath != '') {
                               // ignore: use_build_context_synchronously
                               Navigator.pop(context);

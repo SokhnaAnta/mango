@@ -3,7 +3,7 @@ import 'package:tflite/tflite.dart';
 loadModel() async {
   await Tflite.loadModel(
     model:
-        "assets/Leafmodel/anthracnose_model.tflite_.tflite", // "assets/Leafmodel/model_unquant.tflite"
+        "assets/Leafmodel/model_unquant.tflite", //  "assets/Leafmodel/anthracnose_model_.tflite"
     labels: "assets/Leafmodel/labels.txt",
     numThreads: 1,
   );
