@@ -1,5 +1,5 @@
-0 Anthracnose
-1 Gall Midge
-2 Healthy
-3 Powdery Mildew
-4 Sooty Mould
+Anthracnose
+Gall Midge
+Healthy
+Powdery Mildew
+Sooty Mould
