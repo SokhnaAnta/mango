@@ -93,7 +93,7 @@ class _HomeState extends State<Home> {
                       ),
                 selectedImagePath == ''
                     ? const Text(
-                        'Select Image',
+                        'Image',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20.0),
                       )
@@ -178,9 +178,9 @@ class _HomeState extends State<Home> {
                 child: Column(
                   children: [
                     const Text(
-                      'Select Image From !',
+                      'Choisissez une image!',
                       style: TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.bold),
+                          fontSize: 15.0, fontWeight: FontWeight.bold),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -222,7 +222,7 @@ class _HomeState extends State<Home> {
                               // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(const SnackBar(
-                                content: Text("No Image Selected !"),
+                                content: Text("Pas d'image !"),
                               ));
                             }
                           },
@@ -237,7 +237,7 @@ class _HomeState extends State<Home> {
                                       height: 60,
                                       width: 60,
                                     ),
-                                    const Text('Gallery'),
+                                    const Text('Galerie'),
                                   ],
                                 ),
                               )),
@@ -278,7 +278,7 @@ class _HomeState extends State<Home> {
                               // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(const SnackBar(
-                                content: Text("No Image Captured !"),
+                                content: Text("Pas d'image!"),
                               ));
                             }
                           },

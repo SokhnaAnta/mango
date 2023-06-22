@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 400,
                         padding: const EdgeInsets.all(40.0),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(15),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
