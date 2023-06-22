@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mango/Login&register/login_Screen.dart';
 import 'model.dart';
 import 'package:tflite/tflite.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,7 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String selectedImagePath = '';
+  late String selectedImagePath = '';
   late List _outputs;
 
   int selectedIndex = 0;
@@ -41,10 +42,14 @@ class _HomeState extends State<Home> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            decoration: BoxDecoration(color: Colors.yellow.shade800),
+            decoration: BoxDecoration(
+                color: Colors.yellow.shade800,
+                borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(20.0),
+                    bottomRight: Radius.circular(20.0))),
             alignment: Alignment.bottomLeft,
             padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
-            height: 140,
+            height: 150,
             child: Row(mainAxisSize: MainAxisSize.min, children: [
               const Text("Febaru Mango yi",
                   style: TextStyle(
@@ -110,7 +115,7 @@ class _HomeState extends State<Home> {
                       selectImage();
                       setState(() {});
                     },
-                    child: const Text('Select')),
+                    child: const Text('Nouveau Diagnostique')),
                 const SizedBox(height: 10),
               ],
             ),
@@ -123,9 +128,12 @@ class _HomeState extends State<Home> {
         ]),
         child: FloatingActionButton(
           backgroundColor: Colors.yellow.shade800,
-          onPressed: () {},
+          onPressed: () async {
+            selectImage();
+            setState(() {});
+          },
           child: const Icon(
-            CupertinoIcons.chat_bubble,
+            CupertinoIcons.camera,
           ),
         ),
       ),
@@ -134,6 +142,12 @@ class _HomeState extends State<Home> {
           onTap: (index) {
             setState(() {
               selectedIndex = index;
+              if (selectedIndex == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              }
             });
           },
           currentIndex: selectedIndex,

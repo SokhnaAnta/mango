@@ -21,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 4), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const Home()),
@@ -41,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
             fit: BoxFit.fill,
           ),
           const Text("Febaru Mango Yi",
-              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20.0))
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0))
         ],
       )),
     );
